@@ -50,8 +50,7 @@ void increase_salary(double salary){
      * el tamaño esperado del str
      * stdin que indica que la entrada se leerá desde la entrada estándar (normalmente el teclado).*/
 
-    increase = salary * 0.1;
-    salary += increase;
+    increase = salary * 0.1, salary += increase;
 
     printf("Felicidades, %s, recibiste un aumento.\nSu salario será de: $%.2f", name, salary);
 }
@@ -97,6 +96,38 @@ void calculate_salary(double hourly_late) {
     printf("Su salario es de $%.2f, por lo tanto usted ha trabajado %i", salary, hours_worked);
 }
 
+void students_marks() {
+    /*Un alumno desea saber cuál será su calificación finan
+     * en la materia de Algoritmos
+     * Dicha calificación se compone de los siguientes ejercicios:
+     * 55% del promedio de sus tres calificaciones parciales
+     * 30% de la calificación del examen final
+     * 15% de la calificacion de un trabajo final*/
+
+    int p1, p2, p3, final_exam, final_work;
+    float final_GPA, partials_mark, mga, fea, fwa;
+
+    printf("Ingrese el porcentaje obtenido en los tres parciales: ");
+    scanf("%i %i %i", &p1, &p2, &p3);
+    printf("Ingrese el porcentaje obtenido en el examen final: ");
+    scanf("%i", &final_exam);
+    printf("Ingrese el porcentaje obtenido en el trabajo final: ");
+    scanf("%i", &final_work);
+
+    partials_mark = ((p1 + p2 + p3) / 3),
+
+    mga = partials_mark * 0.55;
+    fea = final_exam * 0.3,
+    fwa = final_work * 0.15,
+    final_GPA = (mga + fea + fwa);
+
+    printf("El porcentaje final obtenida es de %.1f por ciento", final_GPA);
+}
+
+void convert_seconds() {
+
+}
+
 
 int main() {
     //arithmetic_operations();
@@ -105,7 +136,8 @@ int main() {
     //increase_salary(20000);
     //convert_time();
     //trapezoid_area(5, 10, 15);
-    calculate_salary(99.99);
+    //calculate_salary(99.99);
+    students_marks();
 
     return 0;
 }
