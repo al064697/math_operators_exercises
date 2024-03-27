@@ -3,10 +3,9 @@
 
 #define PI 3.1416
 
+/* Pídale al usuario dos números
+ * Hacer: suma, resta, multiplicación y división*/
 void arithmetic_operations(){
-    /* Pídale al usuario dos números
-     * Hacer: suma, resta, multiplicación y división*/
-
     float num1, num2, sum, difference, product, quotient;
 
     printf("Ingrese dos números:\n");
@@ -18,9 +17,8 @@ void arithmetic_operations(){
            sum, difference, product, quotient);
 }
 
+// Calcula el área de: círculo, cuadrado, rectángulo y triángulo
 void calculate_areas(double a, double b){
-    // Calcula el área de: círculo, cuadrado, rectángulo y triángulo
-
     double circle, square, rectangle, triangle;
 
     circle = PI * pow(a, 2), square = pow(a, 2), rectangle = a * b, triangle = (a * b) / 2;
@@ -29,17 +27,15 @@ void calculate_areas(double a, double b){
            circle, square, rectangle, triangle);
 }
 
+//Calcule: Cateto opuesto, cateto adyacente, hipotenusa usando el teorema de Pitágoras
 void pythagoras(double a, double b, double c){
-    //Calcule: Cateto opuesto, cateto adyacente, hipotenusa usando el teorema de Pitágoras
-
     a = sqrt(c - b), b = sqrt(c - a), c = sqrt(a + b);
 
     printf("a=%.4f\nb=%.4f\nc=%.4f\n\n", a, b, c);
 }
 
+//Incremente el salario de un usuario un 10%
 void increase_salary(double salary){
-    //Incremente el salario de un usuario un 10%
-
     double increase;
     char name[50];
 
@@ -55,14 +51,13 @@ void increase_salary(double salary){
     printf("Felicidades, %s, recibiste un aumento.\nSu salario será de: $%.2f", name, salary);
 }
 
+/*Transformar:
+ * años a meses,
+ * meses a semanas,
+ * semanas a días,
+ * días a horas*/
+//Pedirle al usuario que digite la cantidad de años con las que se hará la conversión
 void convert_time(){
-    /*Transformar:
-     * años a meses,
-     * meses a semanas,
-     * semanas a días,
-     * días a horas*/
-    //Pedirle al usuario que digite la cantidad de años con las que se hará la conversión
-
     int years, months, weeks, days, hours;
 
     printf("Ingrese la cantidad que desea convertir: ");
@@ -82,9 +77,8 @@ void trapezoid_area(int b1, int b2, int h) {
     printf("El área del trapecio es de: %.2f cm^2", a);
 }
 
+//Calcular su salario e imprimirlo
 void calculate_salary(double hourly_late) {
-    //Calcular su salario e imprimirlo
-
     int hours_worked;
     double salary;
 
@@ -96,14 +90,13 @@ void calculate_salary(double hourly_late) {
     printf("Su salario es de $%.2f, por lo tanto usted ha trabajado %i", salary, hours_worked);
 }
 
+/*Un alumno desea saber cuál será su calificación finan
+ * en la materia de Algoritmos
+ * Dicha calificación se compone de los siguientes ejercicios:
+ * 55% del promedio de sus tres calificaciones parciales
+ * 30% de la calificación del examen final
+ * 15% de la calificacion de un trabajo final*/
 void students_marks() {
-    /*Un alumno desea saber cuál será su calificación finan
-     * en la materia de Algoritmos
-     * Dicha calificación se compone de los siguientes ejercicios:
-     * 55% del promedio de sus tres calificaciones parciales
-     * 30% de la calificación del examen final
-     * 15% de la calificacion de un trabajo final*/
-
     int p1, p2, p3, final_exam, final_work;
     float final_GPA, partials_mark, mga, fea, fwa;
 
@@ -121,13 +114,83 @@ void students_marks() {
     fwa = final_work * 0.15,
     final_GPA = (mga + fea + fwa);
 
-    printf("El porcentaje final obtenida es de %.1f por ciento", final_GPA);
+    printf("El porcentaje final obtenido es de %.1f por ciento", final_GPA);
 }
 
+/*Calcular la cantidad de segundos que están incluidos en:
+ * el número de horas;
+ * minutos;
+ * segundos;
+ * ingresados por el usuario*/
 void convert_seconds() {
+    int hours, minutes, seconds;
+
+    printf("Ingrese el numero de horas: ");
+    scanf("%i", &hours);
+    printf("Ingrese el numero de minutos: ");
+    scanf("%i", &minutes);
+    printf("Ingrese el numero de segundos: ");
+    scanf("%i", &seconds);
+
+    seconds += (hours * 3600) + (minutes * 60);
+    printf("Total de segundos = %i", seconds);
+}
+
+//Convertir grados Celsius a Farenheit
+void convert_celsius_farenheit(float celsius) {
+    float farenheit = ((celsius * 9) / 5) + 32;
+
+    printf("Temperatura en Farenheit: %.1f °F", farenheit);
 
 }
 
+/*Una tienda ofrece un descuento del 15% sobre el total de la compra
+ * y un cliente desea saber cuánto deberá pagar finalmente por su compra*/
+void calculate_discoint() {
+    float price, total_price;
+
+    printf("Ingrese la cantidad total a pagar: ");
+    scanf("%f", &price);
+
+    total_price = price - (price * 0.15);
+
+    printf("Total a pagar = : $%.2f", total_price);
+}
+
+//Hacer un programa que calcule longitudes de la circunferencia
+void circumference_length(float r) {
+    float p, a;
+    p = PI * (2 * r);
+    a = PI * pow(r, 2);
+
+    printf("Perimetro = %.2f cm^2\nArea = %.2f cm^2", p, a);
+}
+
+//Calcule la media aritmética de tres numeros cualquiera dados por el usuario
+void calculate_mean() {
+    float n1, n2, n3, mean;
+
+    printf("Ingrese tres números: ");
+    scanf("%f %f %f", &n1, &n2, &n3);
+
+    mean = (n1 + n2 + n3) / 3;
+
+    printf("Media aritmética = %.2f", mean);
+}
+
+/*Calcular el nuevo salario de un obrero
+ * si obtuvo un incremento del 25% sobre su salario anterior*/
+void new_salary() {
+    float salary, new_salary;
+
+    printf("¡Es candidato a recibir un aumento.\n"
+           "Por favor, ingrese su salario anterior para poder recibir este incremento: $");
+    scanf("%f", &salary);
+
+    new_salary = salary + (salary * 0.25);
+
+    printf("Su nuevo salario será de: $%.2f", new_salary);
+}
 
 int main() {
     //arithmetic_operations();
@@ -137,7 +200,12 @@ int main() {
     //convert_time();
     //trapezoid_area(5, 10, 15);
     //calculate_salary(99.99);
-    students_marks();
+    //students_marks();
+    //convert_celsius_farenheit(31);
+    //calculate_discoint();
+    //circumference_length(10);
+    //calculate_mean();
+    new_salary();
 
     return 0;
 }
